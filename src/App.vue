@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" data-app>
+    <Controls />
+    <Main />
+    <Modal />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Main from "./components/Main";
+import Modal from "./components/Modal";
+import Controls from "./components/Controls";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Controls,
+    Main,
+    Modal,
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+html {
+  overflow-y: auto !important;
+}
+#app {
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
